@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Dashboard</title>
+</head>
+<body>
+
+    <header>
+        <h1>Student Dashboard</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#dashboard">Dashboard</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="dashboard">
+            <h2>Animated Graph</h2>
+
+            <canvas id="myCanvas" width="400" height="250"
+                    style="border:1px solid black;">
+            </canvas>
+        </section>
+    </main>
+
+    <aside>
+        <h3>Dashboard Information</h3>
+        <p>Student performance graph.</p>
+    </aside>
+
+    <footer id="contact">
+        <p>Copyright 2026 Student Dashboard</p>
+    </footer>
+
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        let height = 20;
+        let speed = 2;
+
+        function animateGraph() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "blue";
+            ctx.fillRect(100, 220 - height, 80, height);
+
+            ctx.fillStyle = "green";
+            ctx.fillRect(220, 220 - height / 2, 80, height / 2);
+
+            height += speed;
+
+            if (height > 180 || height < 20) {
+                speed = -speed;
+            }
+
+            requestAnimationFrame(animateGraph);
+        }
+
+        animateGraph();
+    </script>
+
+</body>
+</html>

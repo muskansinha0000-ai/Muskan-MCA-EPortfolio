@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Red Rectangle Canvas</title></head>
+<body>
+    <h2>Red Rectangle</h2>
+
+    <canvas id="myCanvas" width="300" height="200"
+            style="border:1px solid black;">
+    </canvas>
+
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(50, 50, 180, 100);
+    </script>
+</body>
+</html>

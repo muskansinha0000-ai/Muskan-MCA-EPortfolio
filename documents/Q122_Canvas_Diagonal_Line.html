@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Diagonal Line</title></head>
+<body>
+    <h2>Diagonal Line on Canvas</h2>
+
+    <canvas id="myCanvas" width="300" height="200"
+            style="border:1px solid black;">
+    </canvas>
+
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(300, 200);
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+    </script>
+</body>
+</html>

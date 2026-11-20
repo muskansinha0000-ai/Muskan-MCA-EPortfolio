@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Profile Settings</title></head>
+<body>
+    <h2>Profile Settings</h2>
+
+    <form>
+        Name:
+        <input type="text" name="name">
+        <br><br>
+
+        Profile Picture:
+        <input type="file" name="picture" accept="image/*">
+        <br><br>
+
+        Choose Theme:
+        <input type="color" id="theme"
+               onchange="document.body.style.backgroundColor=this.value">
+        <br><br>
+
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

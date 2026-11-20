@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Assignments</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .assignment-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .assignment-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .assignment-card h3 {
+            color: #333;
+        }
+
+        .assignment-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .assignment-card a:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Web Development Assignments</h1>
+
+    <div class="assignment-container" id="assignments"></div>
+
+    <script>
+        const container = document.getElementById("assignments");
+
+        const files = [
+            "Q1_Student_Information_Table.html",
+            "Q2_Semester_Subjects_Table.html",
+            "Q3_Department_Student_Details.html",
+            "Q4_Class_Time_Table.html",
+            "Q5_Students_Grouped_By_Department.html",
+            "Q6_Student_Semester_Marks.html",
+            "Q7_Table_With_Hyperlinks.html",
+            "Q8_Patient_Details_Table.html",
+            "Q9_Nested_Tables.html",
+            "Q10_Nested_Table_Inside_Table.html",
+            "Q11_Table_Inside_Table.html",
+            "Q12_Environment_Setup.html",
+            "Q13_HTML_Basics.html",
+            "Q14_Text_Formatting.html",
+            "Q15_Course_Curriculum_Lists.html",
+            "Q16_Hyperlinks.html",
+            "Q17_Images_Gallery.html",
+            "Q18_Student_Marksheet_Timetable_Fee_Receipt.html",
+            "Q19_Multimedia.html",
+            "Q20_Student_Registration_Form.html",
+            "Q21_Online_Admission_Form.html",
+            "Q22_Semantic_HTML.html",
+            "Q23_HTML5_Elements.html",
+            "Q24_Iframes.html",
+            "Q25_HTML_Entities_Emojis_Symbols.html",
+            "Q26_Meta_Tags_SEO.html",
+            "Q27_Personal_Portfolio.html",
+            "Q28_College_Home.html",
+            "Q29_College_About.html",
+            "Q30_College_Courses.html",
+            "Q31_College_Contact.html",
+            "Q32_Ecommerce_Product_Catalogue.html",
+            "Q33_Hospital_Home.html",
+            "Q34_Hospital_About.html",
+            "Q35_Hospital_Services.html",
+            "Q36_Hospital_Contact.html",
+            "Q37_Username_Input.html",
+            "Q38_Password_Input.html",
+            "Q39_First_Last_Name.html",
+            "Q40_Submit_Button.html",
+            "Q41_Reset_Button.html",
+            "Q42_Gender_Radio_Buttons.html",
+            "Q43_Hobbies_Checkboxes.html",
+            "Q44_Profile_Picture_Upload.html",
+            "Q45_Label_Input.html",
+            "Q46_Country_Dropdown (1).html",
+            "Q47_Comments_Textarea.html",
+            "Q48_Click_Me_Button.html",
+            "Q49_Required_Name_Input.html",
+            "Q50_Email_Validation.html",
+            "Q51_Age_Number_Input.html",
+            "Q52_Birthdate_Date_Picker.html",
+            "Q53_Appointment_Time.html",
+            "Q54_Colour_Picker.html",
+            "Q55_Volume_Range.html",
+            "Q56_Fieldset_Personal_Details.html",
+            "Q57_Login_Form.html",
+            "Q58_Contact_Form.html",
+            "Q59_Payment_Method.html",
+            "Q60_Language_Selection.html",
+            "Q61_Age_Limit.html",
+            "Q62_Phone_Number_Validation.html",
+            "Q63_PDF_File_Upload.html",
+            "Q64_Profession_Dropdown.html",
+            "Q65_Terms_Conditions.html",
+            "Q66_Address_Fieldset.html",
+            "Q67_Email_Format_Validation.html",
+            "Q68_Placeholder_Attributes.html",
+            "Q69_Confirm_Password.html",
+            "Q70_Form_Reset.html",
+            "Q71_Newsletter_Signup.html",
+            "Q72_Disabled_Input.html",
+            "Q73_Hidden_Input.html",
+            "Q74_Rating_Range.html",
+            "Q75_Background_Colour_Picker.html",
+            "Q76_Tel_Input.html",
+            "Q77_Registration_Form_Validation.html",
+            "Q78_Password_Pattern.html",
+            "Q79_Multi_Step_Form.html",
+            "Q80_Survey_Form.html",
+            "Q81_Job_Application_Form.html",
+            "Q82_Required_Fields_Form.html",
+            "Q83_ARIA_Accessibility_Form.html",
+            "Q84_Booking_Date_Form.html",
+            "Q85_Profile_Settings.html",
+            "Q86_Feedback_Star_Rating.html",
+            "Q87_Header_Footer.html",
+            "Q88_Website_Title_Header.html",
+            "Q89_Navigation_Links.html",
+            "Q90_Main_Paragraph.html",
+            "Q91_Two_Sections.html",
+            "Q92_Blog_Article.html",
+            "Q93_Aside_Related_Links.html",
+            "Q94_Figure_Figcaption.html",
+            "Q95_Time_Event.html",
+            "Q96_Address_Contact.html",
+            "Q97_Header_Main_Footer.html",
+            "Q98_Horizontal_Navigation.html",
+            "Q99_Article_Publication_Date.html",
+            "Q100_Simple_Blog.html",
+            "Q101_Two_Images_Captions.html",
+            "Q102_Developer_Email.html",
+            "Q103_SVG_Rectangle.html",
+            "Q104_SVG_Circle.html",
+            "Q105_SVG_Line.html",
+            "Q106_Canvas_Border.html",
+            "Q107_Semantic_Layout.html",
+            "Q108_Multiple_Sections.html",
+            "Q109_Blog_Author_Info.html",
+            "Q110_Header_Navigation_Footer.html",
+            "Q111_Two_Blog_Posts.html",
+            "Q112_Related_Articles.html",
+            "Q113_Image_Title_Figure.html",
+            "Q114_Event_Date_Time.html",
+            "Q115_Company_Contact.html",
+            "Q116_Magazine_Layout.html",
+            "Q117_Blue_SVG_Rectangle.html",
+            "Q118_SVG_Circle_Rectangle.html",
+            "Q119_SVG_Triangle.html",
+            "Q120_SVG_Line_Two_Circles.html",
+            "Q121_Canvas_Red_Rectangle.html",
+            "Q122_Canvas_Diagonal_Line.html",
+            "Q123_Canvas_Blue_Circle.html",
+            "Q124_Canvas_Multiple_Shapes.html",
+            "Q125_SVG_Green_Ellipse.html",
+            "Q126_Semantic_Layout_SVG.html",
+            "Q127_Complete_Semantic_Webpage.html",
+            "Q128_Blog_Three_Articles.html",
+            "Q129_Photo_Gallery.html",
+            "Q130_Newspaper_Layout.html",
+            "Q131_SVG_Sunset_Scene.html",
+            "Q132_Canvas_House.html",
+            "Q133_Canvas_Linear_Gradient.html",
+            "Q134_Canvas_Bouncing_Ball.html",
+            "Q135_Semantic_SVG_Bar_Chart.html",
+            "Q136_Animated_Canvas_Dashboard.html"
+        ];
+
+        files.forEach((filename, index) => {
+            const card = document.createElement("div");
+            card.className = "assignment-card";
+
+            card.innerHTML = `
+                <h3>Assignment ${index + 1}</h3>
+                <a href="${filename}" target="_blank">View Assignment</a>
+            `;
+
+            container.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>

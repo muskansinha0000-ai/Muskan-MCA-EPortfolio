@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Admission Form</title>
+</head>
+<body>
+
+    <h1>Online Admission Form</h1>
+
+    <form>
+
+        Student Name:
+        <input type="text" name="name"
+               required minlength="3" maxlength="40"
+               pattern="[A-Za-z ]+">
+        <br><br>
+
+        Email:
+        <input type="email" name="email" required>
+        <br><br>
+
+        Mobile Number:
+        <input type="tel" name="mobile"
+               pattern="[0-9]{10}"
+               placeholder="10 digit number" required>
+        <br><br>
+
+        Date of Birth:
+        <input type="date" name="dob" required>
+        <br><br>
+
+        12th Percentage:
+        <input type="number" name="percentage"
+               min="0" max="100" required>
+        <br><br>
+
+        Course:
+        <select name="course" required>
+            <option value="">Select Course</option>
+            <option>MCA</option>
+            <option>MBA</option>
+            <option>BCA</option>
+        </select>
+        <br><br>
+
+        Address:
+        <textarea name="address" required></textarea>
+        <br><br>
+
+        <button type="submit">Submit Application</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</body>
+</html>

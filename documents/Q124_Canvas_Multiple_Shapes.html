@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Multiple Canvas Shapes</title></head>
+<body>
+    <h2>Multiple Shapes</h2>
+
+    <canvas id="myCanvas" width="400" height="250"
+            style="border:1px solid black;">
+    </canvas>
+
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(20, 30, 100, 70);
+
+        ctx.beginPath();
+        ctx.arc(200, 70, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(20, 180);
+        ctx.lineTo(350, 180);
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+    </script>
+</body>
+</html>

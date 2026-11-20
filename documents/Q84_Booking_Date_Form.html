@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Booking Form</title></head>
+<body>
+    <h2>Appointment Booking</h2>
+
+    <form>
+        Name:
+        <input type="text" required>
+        <br><br>
+
+        Booking Date:
+        <input type="date" id="date" required>
+        <br><br>
+
+        <input type="submit" value="Book Appointment">
+    </form>
+
+    <script>
+        let today = new Date().toISOString().split("T")[0];
+        document.getElementById("date").min = today;
+    </script>
+</body>
+</html>
